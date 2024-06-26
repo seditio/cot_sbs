@@ -22,12 +22,14 @@ else {
 	    '1' => [
 	  		'image' => 'astronaut.jpg',
 	  		'link' => 'https://sed.by/blog',
-	  		'alt' => 'астронавт',
+	  		'text_1' => 'Астронавт',
+	  		'text_2' => 'Изображение астронавта',
 	  	],
-	  	'67' => [
+	  	'2' => [
 	  		'image' => 'desktop.jpg',
 	  		'link' => 'https://sed.by/cot',
-	      'alt' => 'десктоп',
+	      'text_1' => 'Десктоп',
+	      'text_2' => 'Изображение десктопа',
 	  	],
 	  ],
 	];

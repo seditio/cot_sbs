@@ -20,32 +20,20 @@ function sedby_banner_exists($area, $id) {
 
 function sedby_banner($tpl = 'sbs', $area = 'global', $id = 'random') {
 	global $sbs_banners;
+
+	($id == 'random') && $id = array_rand($sbs_banners[$area]);
+
 	(!isset($tpl) || empty($tpl)) && $tpl = 'sbs';
 	$t = new XTemplate(cot_tplfile($tpl, 'plug'));
-
-	if ($id == 'random') {
-		$random = array_rand($sbs_banners[$area]);
-		$t->assign([
-			$banner_image = $sbs_banners[$area][$random]['image'],
-			$banner_link = $sbs_banners[$area][$random]['link'],
-			$banner_alt = $sbs_banners[$area][$random]['alt'],
-		]);
-	} else {
-		$t->assign([
-			$banner_image = $sbs_banners[$area][$id]['image'],
-			$banner_link = $sbs_banners[$area][$id]['link'],
-			$banner_alt = $sbs_banners[$area][$id]['alt'],
-		]);
-	};
-
 	$t->assign([
-		"BANNER_IMAGE" => Cot::$cfg['mainurl'] . Cot::$cfg['plugin']['sbs']['folder'] . $banner_image,
-		"BANNER_LINK" => $banner_link,
-		"BANNER_ALT" => $banner_alt,
+		"BANNER_IMAGE" => Cot::$cfg['mainurl'] . Cot::$cfg['plugin']['sbs']['folder'] . $banner_image = $sbs_banners[$area][$id]['image'],
+		"BANNER_LINK" => $banner_link = $sbs_banners[$area][$id]['link'],
+		"BANNER_TEXT_1" => $banner_alt = $sbs_banners[$area][$id]['text_1'],
+		"BANNER_TEXT_2" => $banner_alt = $sbs_banners[$area][$id]['text_2'],
 		"BANNER_REL" => 'rel="' . Cot::$cfg['plugin']['sbs']['rel'] . '"',
 	]);
-
 	$t->parse();
 	$output = $t->text();
+
 	return $output;
 }
