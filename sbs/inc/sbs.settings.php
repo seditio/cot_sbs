@@ -20,16 +20,36 @@ else {
 	$sbs_banners = [
 		'page' => [
 	    '1' => [
-	  		'image' => 'astronaut.jpg',
-	  		'link' => 'https://sed.by/blog',
-	  		'text_1' => 'Астронавт',
-	  		'text_2' => 'Изображение астронавта',
+	  		'image' => [
+					'astronaut.jpg',
+					'pilot.jpg',
+				],
+	  		'link' => [
+					'https://sed.by/blog',
+					'https://sed.by/archive',
+				],
+	  		'text_1' => [
+					'Астронавт',
+					'Космонавт',
+				],
+	  		'text_2' => [
+					'Изображение астронавта',
+					'Картинка космонавта',
+				],
 	  	],
 	  	'2' => [
-	  		'image' => 'desktop.jpg',
-	  		'link' => 'https://sed.by/cot',
-	      'text_1' => 'Десктоп',
-	      'text_2' => 'Изображение десктопа',
+	  		'image' => [
+					'desktop.jpg',
+				],
+	  		'link' => [
+					'https://sed.by/cot',
+				],
+	      'text_1' => [
+					'Десктоп',
+				],
+	      'text_2' => [
+					'Изображение десктопа',
+				],
 	  	],
 	  ],
 	];
